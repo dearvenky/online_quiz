@@ -100,7 +100,7 @@
 		      header-tag="header"
 		      title="Kaushik"
 		    >
-		    <b-img right thumbnail rounded="circle" width = 100 height = 100 src="Kaushik.jpg" alt="Right image"></b-img>
+		    <b-img right thumbnail rounded="circle" width = 100 height = 100 src="kaushik.jpg" alt="Right image"></b-img>
 		      <b-card-text>PHP Developer</b-card-text>
 		      <b-button href="#" variant="primary">More Info</b-button>
 		    </b-card>
