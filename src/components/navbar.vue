@@ -7,44 +7,49 @@
 
     <b-collapse id="nav-collapse" is-nav>
       <b-navbar-nav>
-        <b-nav-item href="#">About US</b-nav-item>
-        <b-nav-item href="#" disabled>Contact US </b-nav-item>
+        <b-nav-item href="#">About us</b-nav-item>
       </b-navbar-nav>
 
       <!-- Right aligned nav items -->
       <b-navbar-nav class="ml-auto">
-        <b-nav-form>
-          <b-form-input size="sm" class="mr-sm-2" placeholder="Search"></b-form-input>
-          <b-button size="sm" class="my-2 my-sm-0" type="submit">Search</b-button>
-        </b-nav-form>
+          <b-nav-item v-b-modal="'login-modal'">Login/Register</b-nav-item>
+          <b-modal id="login-modal">
+            <b-tabs content-class="mt-3" align="center">
+              <b-tab title="Login">  
+                <b-form>  
+                  <b-form-input id="login-email"  type="email" required placeholder="Email"></b-form-input><br>
+                  <b-form-input id="login-pass"  type="password" required placeholder="Password"></b-form-input>
+                </b-form>
+              </b-tab>
 
-        <b-nav-item-dropdown text="Lang" right>
-          <b-dropdown-item href="#">EN</b-dropdown-item>
-          <b-dropdown-item href="#">ES</b-dropdown-item>
-          <b-dropdown-item href="#">RU</b-dropdown-item>
-          <b-dropdown-item href="#">FA</b-dropdown-item>
-        </b-nav-item-dropdown>
+              <b-tab title="Register">
+                <b-form>
+                  <b-form-input id="reg-fname"  type="text" required placeholder="First name"></b-form-input><br>
+                  <b-form-input id="reg-lname"  type="text" required placeholder="Last name"></b-form-input><br>  
+                  <b-form-input id="reg-email"  type="email" required placeholder="Email"></b-form-input><br>
+                  <b-form-input id="reg-pass"  type="password" required placeholder="Password"></b-form-input><br>
+                  <b-form-input id="reg-repass"  type="password" required placeholder="Confirm Password"></b-form-input><br>
+                </b-form>
+              </b-tab>
 
-        <b-nav-item-dropdown right>
-          <!-- Using 'button-content' slot -->
-          <template v-slot:button-content>
-            <em>User</em>
-          </template>
-          <b-dropdown-item href="#">Profile</b-dropdown-item>
-          <b-dropdown-item href="#">Sign Out</b-dropdown-item>
-        </b-nav-item-dropdown>
+            </b-tabs>
+
+            <template v-slot:modal-footer="{ Submit }">
+              <b-button size="sm" @click="submit()">Submit</b-button>
+            </template>
+
+          </b-modal>
+          
+
+          
       </b-navbar-nav>
     </b-collapse>
   </b-navbar>
 </div>
 </template>
+
 <script>
 export default {
-  name: 'navbar',
-  data () {
-    return {
-      msg: 'Welcome to Your Vue.js App'
-    }
-  }
+  name: 'navbar'
 }
 </script>
